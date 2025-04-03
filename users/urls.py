@@ -6,4 +6,5 @@ app_name = 'users'
 urlpatterns=[
     path('register/',views.CreateUser, name="register"),
     path('login/',views.Login,name='login'),
+    path('logout/', views.Logout, name='logout'),
 ]

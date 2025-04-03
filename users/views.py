@@ -2,7 +2,8 @@ from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
 from .forms import UserForm, LoginForm
 from django.contrib import messages
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 
 
 
@@ -19,7 +20,6 @@ def CreateUser(request):
     else:
         form = UserForm()
     return render(request, 'users/registration.html',{'form':form})
-
 
 def Login(request):
     if request.user.is_authenticated:
@@ -43,4 +43,9 @@ def Login(request):
                 messages.info(request,'Username is invalid')
                 return redirect('users:login')
     return render(request,'users/login.html',{'form':form})
-            
+
+@login_required
+def Logout(request):
+    logout(request)
+    return redirect('/')
+    
