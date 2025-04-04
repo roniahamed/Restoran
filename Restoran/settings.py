@@ -126,4 +126,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Login redirect urls
 LOGIN_REDIRECT_URL = 'items:show'
+LOGIN_URL = 'users:login'
+
+# Media setting
+MEDIA_ROOT = os.path.join(BASE_DIR/'images')
+MEDIA_URL = '/images/'
 
