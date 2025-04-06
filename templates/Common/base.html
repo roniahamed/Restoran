@@ -5,16 +5,22 @@
 
 <head>
     {% include 'common/meta.html' %}
+    <title> {% block title %} {% endblock title %} </title>
 </head>
 
 <body>
-    {% include 'common/nav.html' %}
+    <div class="container-xxl bg-white p-0">
+        {% include 'common/nav.html' %}
 
-    {% block 'content' %}
-    {% endblock %}
+        {% block content %}
+        {% endblock %}
 
 
-    {% include 'common/footer.html' %}
+        {% include 'common/footer.html' %}
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    </div>
     {% include 'common/scripts.html' %}
 </body>
 
