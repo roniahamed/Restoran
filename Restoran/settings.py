@@ -131,6 +131,6 @@ LOGIN_REDIRECT_URL = 'items:show'
 LOGIN_URL = 'users:login'
 
 # Media setting
-MEDIA_ROOT = os.path.join(BASE_DIR/'images')
-MEDIA_URL = '/images/'
+MEDIA_ROOT = os.path.join(BASE_DIR / 'pictures')
+MEDIA_URL = '/pictures/'
 
